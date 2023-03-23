@@ -1,11 +1,28 @@
 [
     {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "sys",
         "description": "sys",
         "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "CustomException",
+        "importPath": "src.exception",
+        "description": "src.exception",
+        "isExtraImport": true,
+        "detail": "src.exception",
         "documentation": {}
     },
     {
@@ -18,20 +35,44 @@
     },
     {
         "label": "logging",
+        "importPath": "src.logger",
+        "description": "src.logger",
+        "isExtraImport": true,
+        "detail": "src.logger",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "logging",
         "description": "logging",
         "detail": "logging",
-        "documentation": {}
-    },
-    {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
         "documentation": {}
     },
     {
@@ -64,6 +105,24 @@
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "DataIngestionConfig",
+        "kind": 6,
+        "importPath": "src.components.data_ingestion",
+        "description": "src.components.data_ingestion",
+        "peekOfCode": "class DataIngestionConfig:\n    train_data_path: str = os.path.join('artifacts', 'train.csv')\n    test_data_path: str = os.path.join('artifacts', 'test.csv')\n    raw_data_path: str = os.path.join('artifacts', 'data.csv')\nclass DataIngestion:\n    def __init__(self):\n        self.ingestion_config=DataIngestionConfig()\n    def initiate_data_ingestion(self):\n        logging.info(\"Entered the data ingestion method or Component\")\n        try:",
+        "detail": "src.components.data_ingestion",
+        "documentation": {}
+    },
+    {
+        "label": "DataIngestion",
+        "kind": 6,
+        "importPath": "src.components.data_ingestion",
+        "description": "src.components.data_ingestion",
+        "peekOfCode": "class DataIngestion:\n    def __init__(self):\n        self.ingestion_config=DataIngestionConfig()\n    def initiate_data_ingestion(self):\n        logging.info(\"Entered the data ingestion method or Component\")\n        try:\n            df=pd.read_csv('notebook/data/stud.csv')\n            logging.info(\"Read the Dataset as DataFrame\")\n            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)\n            df.to_csv(self.ingestion_config.raw_data_path, index=False, header=True)",
+        "detail": "src.components.data_ingestion",
         "documentation": {}
     },
     {
