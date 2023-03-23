@@ -10,6 +10,14 @@
     },
     {
         "label": "logging",
+        "importPath": "src.logger",
+        "description": "src.logger",
+        "isExtraImport": true,
+        "detail": "src.logger",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "logging",
