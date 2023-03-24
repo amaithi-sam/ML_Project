@@ -102,8 +102,8 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.artifacts
-.vscode
+.artifacts/
+.vscode/
 .env
 .venv
 .ml_env
