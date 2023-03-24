@@ -26,6 +26,22 @@
         "documentation": {}
     },
     {
+        "label": "CustomException",
+        "importPath": "src.exception",
+        "description": "src.exception",
+        "isExtraImport": true,
+        "detail": "src.exception",
+        "documentation": {}
+    },
+    {
+        "label": "CustomException",
+        "importPath": "src.exception",
+        "description": "src.exception",
+        "isExtraImport": true,
+        "detail": "src.exception",
+        "documentation": {}
+    },
+    {
         "label": "logging",
         "importPath": "src.logger",
         "description": "src.logger",
@@ -39,6 +55,30 @@
         "description": "src.logger",
         "isExtraImport": true,
         "detail": "src.logger",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "importPath": "src.logger",
+        "description": "src.logger",
+        "isExtraImport": true,
+        "detail": "src.logger",
+        "documentation": {}
+    },
+    {
+        "label": "DataTransformation",
+        "importPath": "src.components.data_transformation",
+        "description": "src.components.data_transformation",
+        "isExtraImport": true,
+        "detail": "src.components.data_transformation",
+        "documentation": {}
+    },
+    {
+        "label": "DataTransformation_config",
+        "importPath": "src.components.data_transformation",
+        "description": "src.components.data_transformation",
+        "isExtraImport": true,
+        "detail": "src.components.data_transformation",
         "documentation": {}
     },
     {
@@ -67,6 +107,80 @@
         "documentation": {}
     },
     {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "ColumnTransformer",
+        "importPath": "sklearn.compose",
+        "description": "sklearn.compose",
+        "isExtraImport": true,
+        "detail": "sklearn.compose",
+        "documentation": {}
+    },
+    {
+        "label": "SimpleImputer",
+        "importPath": "sklearn.impute",
+        "description": "sklearn.impute",
+        "isExtraImport": true,
+        "detail": "sklearn.impute",
+        "documentation": {}
+    },
+    {
+        "label": "Pipeline",
+        "importPath": "sklearn.pipeline",
+        "description": "sklearn.pipeline",
+        "isExtraImport": true,
+        "detail": "sklearn.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "OneHotEncoder",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "StandardScaler",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "save_object",
+        "importPath": "src.utils",
+        "description": "src.utils",
+        "isExtraImport": true,
+        "detail": "src.utils",
+        "documentation": {}
+    },
+    {
         "label": "logging",
         "kind": 6,
         "isExtraImport": true,
@@ -81,6 +195,15 @@
         "description": "datetime",
         "isExtraImport": true,
         "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "dill",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dill",
+        "description": "dill",
+        "detail": "dill",
         "documentation": {}
     },
     {
@@ -126,6 +249,24 @@
         "documentation": {}
     },
     {
+        "label": "DataTransformation_config",
+        "kind": 6,
+        "importPath": "src.components.data_transformation",
+        "description": "src.components.data_transformation",
+        "peekOfCode": "class DataTransformation_config:\n    preprocessor_obj_file_path = os.path.join('artifacts', 'preprocessor.pkl')\nclass DataTransformation:\n    def __init__(self):\n        self.data_transformation_config = DataTransformation_config()\n    def get_data_transformer_object(self):\n        '''\n        This Function is responsible for data Transformation\n        '''\n        try:",
+        "detail": "src.components.data_transformation",
+        "documentation": {}
+    },
+    {
+        "label": "DataTransformation",
+        "kind": 6,
+        "importPath": "src.components.data_transformation",
+        "description": "src.components.data_transformation",
+        "peekOfCode": "class DataTransformation:\n    def __init__(self):\n        self.data_transformation_config = DataTransformation_config()\n    def get_data_transformer_object(self):\n        '''\n        This Function is responsible for data Transformation\n        '''\n        try:\n            numerical_columns = ['writing_score', 'reading_score']\n            categorical_columns = [",
+        "detail": "src.components.data_transformation",
+        "documentation": {}
+    },
+    {
         "label": "CustomException",
         "kind": 6,
         "importPath": "src.exception",
@@ -159,6 +300,15 @@
         "description": "src.logger",
         "peekOfCode": "LOG_FILE_PATH = os.path.join(logs_path, LOG_FILE)\nlogging.basicConfig(\n    filename=LOG_FILE_PATH,\n    format=\"[%(asctime)s] %(lineno)d %(name)s - %(levelname)s - %(message)s\",\n    level = logging.INFO,\n)",
         "detail": "src.logger",
+        "documentation": {}
+    },
+    {
+        "label": "save_object",
+        "kind": 2,
+        "importPath": "src.utils",
+        "description": "src.utils",
+        "peekOfCode": "def save_object(file_path, obj):\n    try:\n        dir_path = os.path.dirname(file_path)\n        os.makedirs(dir_path, exist_ok=True)\n        with open(file_path, \"wb\") as file_obj:\n            dill.dump(obj, file_obj)\n    except Exception as e:\n        raise CustomException(e, sys)",
+        "detail": "src.utils",
         "documentation": {}
     },
     {
