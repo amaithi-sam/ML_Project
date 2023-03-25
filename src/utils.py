@@ -21,13 +21,14 @@ def save_object(file_path, obj):
     except Exception as e:
         raise CustomException(e, sys)
     
-def evaluate_models(x_train, y_train, x_test, y_test, models):
+def evaluate_models(x_train, y_train, x_test, y_test, models, param):
     
     try:
         report = {}
         
         for i in range(len(list(models))):
             model = list(models.values())[i]
+            
             
             model.fit(x_train, y_train) # Train the Model 
             
@@ -45,3 +46,12 @@ def evaluate_models(x_train, y_train, x_test, y_test, models):
     
     except Exception as e:
         raise CustomException(e, sys)
+    
+    
+def load_object(file_path):
+    try:
+        with open(file_path, "rb") as file_obj:
+            return dill.load(file_obj)
+        
+    except Exception as e:
+        raise CustomException(e,sys)
